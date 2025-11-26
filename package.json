@@ -1,0 +1,12 @@
+{
+  "name": "go-fulstack",
+  "version": "1.0.0",
+  "description": "backend learing",
+  "license": "ISC",
+  "author": "ted tsamoh",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
