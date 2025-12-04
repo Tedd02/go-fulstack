@@ -1,9 +1,11 @@
 //importation des modules nécessaires
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 //importation du modèle Thing
 const Thing = require('./models/thing');
+
 
 //importation des routes
 const stuffRoutes = require('./routes/stuff');
@@ -12,9 +14,9 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 mongoose
-  .connect('mongodb+srv://dtted02:Liverpool02@cluster0.tmbztiv.mongodb.net/')
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(err => console.log('Connexion à MongoDB échouée !', err));
+.connect('mongodb+srv://dtted02:Liverpool02@cluster0.tmbztiv.mongodb.net/')
+.then(() => console.log('Connexion à MongoDB réussie !'))
+.catch(err => console.log('Connexion à MongoDB échouée !', err));
 
 app.use(express.json());
 
@@ -25,7 +27,10 @@ app.use((req, res, next) => {
   next();
 }); 
 
-//using routes for products
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+//using routes for 
 app.use('/api/stuff', stuffRoutes);
 app.use('/api/auth', userRoutes);
 
