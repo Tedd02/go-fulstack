@@ -14,7 +14,7 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 mongoose
-.connect('mongodb+srv://dtted02:Liverpool02@cluster0.tmbztiv.mongodb.net/')
+.connect('mongodb+srv://xxxxx:xxxxxx@cluster0.tmbztiv.mongodb.net/')
 .then(() => console.log('Connexion à MongoDB réussie !'))
 .catch(err => console.log('Connexion à MongoDB échouée !', err));
 
